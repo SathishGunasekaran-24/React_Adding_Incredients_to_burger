@@ -68,6 +68,10 @@ changeModel = () => {
     }
   )
 }
+
+placeOrder = () => {
+    alert("Thank you for Clicking Continue")
+}
   removeIngredients = (type) => {
     console.log(this.state.purchasable)
     const oldCount = this.state.ingredients[type];
@@ -103,7 +107,10 @@ changeModel = () => {
       <Aux>
       
       <Modal show={this.state.puchasing} clicked={this.changeModel}>
-      <OrderSummary ingredients={this.state.ingredients} />
+      <OrderSummary ingredients={this.state.ingredients} 
+                    purchaseCancelled={this.changeModel} 
+                    purchaseOrdered={this.placeOrder}
+                    price={this.state.totalprice}/>
       </Modal>
       <Burger items={this.state.ingredients}/>
       <div>Burger</div>
