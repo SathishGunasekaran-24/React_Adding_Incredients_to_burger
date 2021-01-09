@@ -13,7 +13,7 @@ const Burger = (props) => {
   console.log(transformincredients);
   if(transformincredients.length===0){
   return(
-        <div className={classes.Burger}>
+    <div className={classes.Burger}>
     <BurgerIncredients type="bread-top" />
     <p>Please add the incredients to the Burger </p>
     <BurgerIncredients type="bread-bottom" />
