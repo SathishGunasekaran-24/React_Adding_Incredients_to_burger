@@ -9,7 +9,6 @@ const controls = [
 ]
 
 const BurgerControls = (props) => {
-  console.log(props.orderButton)
   return (
     <div className={classes.BurgerControls}>
       <p>Current Price: <strong>{props.price.toFixed(2)}</strong> </p>

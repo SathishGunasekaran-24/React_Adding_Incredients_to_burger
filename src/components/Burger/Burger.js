@@ -10,7 +10,6 @@ const Burger = (props) => {
   }).reduce((arr, el)=>{
       return arr.concat(el)
     },[])
-  console.log(transformincredients);
   if(transformincredients.length===0){
   return(
     <div className={classes.Burger}>
