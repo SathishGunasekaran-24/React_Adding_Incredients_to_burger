@@ -17,7 +17,6 @@ const Burger = (props) => {
     <p>Please add the incredients to the Burger </p>
     <BurgerIncredients type="bread-bottom" />
     </div>
-    
   );
 }
 else{

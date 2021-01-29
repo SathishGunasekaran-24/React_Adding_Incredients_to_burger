@@ -6,7 +6,6 @@ import BurgerControls from '../../components/Burger/BurgerControls/BurgerControl
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
-
 import axios from '../../axios-orders';
 
   const prices = {
@@ -82,7 +81,7 @@ changeModel = () => {
 
 placeOrder = () => {
   this.setState({loading:true})
-  const order = {
+  /*const order = {
     ingredients: this.state.ingredients,
     price: this.state.totalprice,
     customer:{
@@ -104,7 +103,16 @@ placeOrder = () => {
         .catch(error=>{
           this.setState({loading:false,puchasing:false})
         });
-    //alert("Thank you for Clicking Continue")
+    //alert("Thank you for Clicking Continue")*/
+    const queryParams = [];
+    for (let i in this.state.ingredients){
+      queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
+    }
+    queryParams.push('price='+ this.state.totalprice);
+    const queryString = queryParams.join('&')
+    this.props.history.push({
+    pathname:'/checkout',
+    search:'?' + queryString});
 }
   removeIngredients = (type) => {
     console.log(this.state.purchasable)
@@ -142,7 +150,6 @@ placeOrder = () => {
       burger = (
       <Aux>
       <Burger items={this.state.ingredients}/>
-      <div>Burger</div>
       <div><BurgerControls 
       removeIngredients={this.removeIngredients}
       addIngredients={this.addIngredients}
