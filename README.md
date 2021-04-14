@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Adding the ingredients to the burger:
+
+A Website that allows us to add the ingredients to the burger and place the order using the React JS and Firebase.
+
+
 
 ## Running on Repl.it
 
